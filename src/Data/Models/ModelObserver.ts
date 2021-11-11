@@ -293,14 +293,6 @@ class ModelObserver {
             if (authUser) {
                const req = URLHelper2.buildDataRequest('user', 'POST', authUser);
                const apiResponse = await fetch(req.url, req.init);
-               // const apiResponse = await fetch('http://localhost:3131/api/user/', {
-               //    method: 'POST',
-               //    headers: {
-               //       'Content-Type': 'application/json',
-               //       Authorization: `Bearer ${accessToken}`,
-               //    },
-               //    body: JSON.stringify(authUser),
-               // });
 
                if (StatusCheck.quickStatusCheck(apiResponse.status)) {
                   const { user } = (await apiResponse.json()) as LoginResponse;
