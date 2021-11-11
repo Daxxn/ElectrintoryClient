@@ -1,0 +1,30 @@
+.number-static {
+   font-weight: bold;
+   padding: 0.2rem;
+}
+
+.number-edit-container {
+   display: flex;
+   flex-flow: row nowrap;
+   align-content: stretch;
+   justify-content: flex-start;
+   align-items: stretch;
+}
+
+.number-edit-controls {
+   display: flex;
+   flex-flow: column nowrap;
+}
+
+.number-input {
+   align-content: stretch;
+   min-width: 50px;
+}
+
+.number-plus-button {
+   padding: 0.1rem;
+}
+
+.number-minus-button {
+   padding: 0.1rem;
+}

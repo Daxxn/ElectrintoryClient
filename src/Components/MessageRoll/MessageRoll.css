@@ -1,0 +1,29 @@
+.message-roll-container {
+   display: flex;
+   flex-flow: row nowrap;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   margin: 0;
+}
+
+.message-text {
+   margin: 0.25rem;
+}
+
+.message-ok {
+   background-color: var(--message-color);
+}
+
+.message-unauth {
+   background-color: var(--message-unauth-color);
+}
+
+.message-error {
+   background-color: var(--message-error-color);
+}
+
+.message-issue {
+   background-color: var(--message-issue-color);
+}

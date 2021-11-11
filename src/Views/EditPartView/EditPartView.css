@@ -1,0 +1,81 @@
+.base-part-edit-view {
+
+}
+.base-part-edit {
+   display: grid;
+   border: var(--border-color) solid 4px;
+   padding: 0.5rem 2rem;
+   grid-template-areas: 
+      "name man ord inv"
+      "desc desc ds ds"
+      "canc canc save save";
+
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-rows: 4rem 6rem 2rem;
+}
+
+.part-item-edit-container {
+   display: flex;
+   flex-flow: row nowrap;
+   align-content: center;
+   align-items: stretch;
+   justify-content: space-evenly;
+   background-color: inherit;
+}
+
+.tag-container {
+   display: flex;
+   flex-flow: column nowrap;
+}
+
+.name {
+   grid-area: name;
+}
+
+.manuf {
+   grid-area: man;
+}
+
+.ordered {
+   grid-area: ord;
+}
+
+.inventory {
+   grid-area: inv;
+}
+
+.desc {
+   grid-area: desc;
+   justify-content: stretch;
+   padding: 0 1rem;
+}
+
+.datasheet {
+   grid-area: ds;
+}
+
+.datasheet-container {
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: space-around;
+   align-items: center;
+   background-color: var(--link-color);
+   border: var(--border-color) solid 4px;
+}
+
+.desc-label {
+   padding-right: 2rem;
+}
+
+.save-button {
+   grid-area: save;
+}
+
+.cancel-button {
+   grid-area: canc;
+}
+
+.part-input-edit {
+   max-width: 10rem;
+   min-width: 5rem;
+}

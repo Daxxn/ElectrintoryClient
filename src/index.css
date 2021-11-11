@@ -1,0 +1,134 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+:root {
+  --background-color: #292d36;
+  --background-hover-color: #394152;
+  --background-modal-color: #353c4d;
+  --background-expander-color: #343e58;
+  --text-color: white;
+  --foreground-color: #2d3950;
+  --button-color: #203050;
+  --combo-item-color: #273e6d;
+  --input-color: #253b66;
+  --input-hover-color: #2b467c;
+  --header-color: #1a263f;
+  --link-color: #2355bb;
+  --border-color: #253655;
+  --textarea-border-color: #192a49;
+  --selected-color: #424e66;
+  --select-item-color: #2e333f;
+  --selected-button-color: #1f396e;
+  --combo-modal-back-color: #242a36;
+
+  --valid-color: #147e8b;
+  --invalid-color: #992916;
+
+  --message-error-color: #70220e;
+  --message-issue-color: #6d4614;
+  --message-unauth-color: #726708;
+  --message-color: #133374;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Fira-Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+}
+
+code {
+  font-family: 'Fira-Code', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.icon-button {
+  padding: 0;
+  margin: 0.1rem;
+}
+
+/* Used for labeled input boxes */
+.item-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+  justify-content: space-between;
+  background-color: inherit;
+}
+
+.item-label {
+  padding-right: 1rem;
+}
+
+/* The input box itself */
+.item-input {
+  padding: 0;
+  margin: 0;
+}
+
+/* defaults */
+div {
+  background-color: var(--background-color);
+}
+
+button {
+  all: unset;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  border-radius: 6%;
+  transition: background-color 200ms ease-in;
+  text-align: center;
+  padding: 0.25rem;
+}
+
+button .disabled-button {
+  opacity: 0.5;
+}
+
+input {
+  all: unset;
+  border-radius: 0.15rem;
+}
+
+input, textarea {
+  background-color: var(--input-color);
+  color: var(--text-color);
+  transition: background-color 180ms ease-in;
+  padding: 0.25rem;
+  margin: 0.1em;
+  min-width: 50%;
+}
+
+input:hover {
+  background-color: var(--input-hover-color);
+}
+
+textarea {
+  min-width: 50%;
+  max-width: 70%;
+  min-height: 2rem;
+  border: solid var(--textarea-border-color) 0.2rem;
+  border-radius: 0.2rem;
+  padding: 0.30rem;
+}
+
+textarea:hover {
+  background-color: var(--input-hover-color);
+}
+
+button:hover {
+  background-color: var(--background-hover-color);
+}
+
+.valid {
+  background-color: var(--valid-input-color);
+}
+
+.invalid {
+  background-color: var(--invalid-input-color);
+}

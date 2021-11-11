@@ -1,0 +1,22 @@
+.base-main-view {
+   background-color: var(--background-color);
+   text-align: left;
+}
+
+.view-controls-cont {
+   display: flex;
+   flex-flow: column nowrap;
+   align-content: stretch;
+   /* ? - Need to add these controls to the TitleCard or something. */
+   /* ? - Otherwise sticky breaks entirely. */
+   /* position: sticky;
+   top: 35px; */
+}
+
+.view-sel-button {
+   align-self: stretch;
+}
+
+.selected-button {
+   background-color: var(--selected-button-color);
+}

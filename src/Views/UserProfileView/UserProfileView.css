@@ -1,0 +1,10 @@
+
+.edit-settings-cont {
+   display: flex;
+   flex-flow: column nowrap;
+   align-items: center;
+}
+
+.edit-settings-controls {
+   align-content: stretch;
+}
