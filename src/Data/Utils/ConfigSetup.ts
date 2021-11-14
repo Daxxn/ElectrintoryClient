@@ -1,5 +1,3 @@
-import devConfig from '../../.authConfig.json';
-
 export type Config = {
    env: string;
    domain: string;
@@ -7,10 +5,11 @@ export type Config = {
    audience: string;
    scope: string;
    serverUrl: string;
+   [key: string]: string;
 };
 
 export default class ConfigSetup {
-   private static config: Config | null = null;
+   private static config: Config;
 
    static get() {
       if (this.config) {
@@ -21,34 +20,27 @@ export default class ConfigSetup {
    }
 
    private static build(): Config {
-      if (process.env.NODE_ENV === 'development') {
-         return {
-            env: process.env.NODE_ENV,
-            domain: devConfig.domain,
-            clientId: devConfig.clientId,
-            audience: devConfig.audience,
-            scope: devConfig.scope,
-            serverUrl: devConfig.serverUrl,
-         };
-      } else if (process.env.NODE_ENV === 'production') {
-         return {
-            env: process.env.NODE_ENV,
-            domain: process.env.REACT_APP_DOMAIN ?? '',
-            clientId: process.env.REACT_APP_CLIENTID ?? '',
-            audience: process.env.REACT_APP_AUDIENCE ?? '',
-            scope: process.env.REACT_APP_SCOPE ?? '',
-            serverUrl: process.env.REACT_APP_SERVER_URL ?? '',
-         };
-      }
-      // Test Env
-      // TODO - Switch out with a test mode.
-      return {
+      this.config = {
          env: process.env.NODE_ENV,
-         domain: devConfig.domain,
-         clientId: devConfig.clientId,
-         audience: devConfig.audience,
-         scope: devConfig.scope,
-         serverUrl: devConfig.serverUrl,
+         debug: process.env.REACT_APP_DEBUG ?? '',
+         domain: process.env.REACT_APP_DOMAIN ?? '',
+         clientId: process.env.REACT_APP_CLIENTID ?? '',
+         audience: process.env.REACT_APP_AUDIENCE ?? '',
+         scope: process.env.REACT_APP_SCOPE ?? '',
+         serverUrl: process.env.REACT_APP_SERVER_URL ?? '',
       };
+      const variables: string[] = [];
+      Object.keys(this.config).forEach(key => {
+         if (this.config[key] === '') {
+            variables.push(key);
+         }
+      });
+      if (variables.length > 0) {
+         console.error(
+            "Some env variables are missing. This is a build issue. I'll fix it as soon as I can."
+         );
+         console.error('Missing variables: ', variables);
+      }
+      return this.config;
    }
 }
